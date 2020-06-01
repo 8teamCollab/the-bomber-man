@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CRT
+  m_Shader: {fileID: 4800000, guid: 992f94d2055e3064a9a40fbf83e40072, type: 3}
+  m_ShaderKeywords: _USECONVERGENCE_ON _USECURVE_ON _USESCANLINES_ON _USEVIGNETTE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AbberationStrength: 1
+    - _AberrationStrength: 1
+    - _Brightness: 3.2
+    - _CurveX: 6
+    - _CurveY: 5
+    - _DoubleOffset: 0
+    - _DoubleStrength: -7
+    - _LineDistributionPow: 0.95
+    - _LineScale: 1
+    - _LineWeight: 0.5
+    - _LineWeightMax: 0.8
+    - _LineWeightMin: 0.3
+    - _ScanSpeed: 20
+    - _UseConvergence: 1
+    - _UseCurve: 1
+    - _UseScanLines: 1
+    - _UseVignette: 1
+    - _VignettePower: 0.45
+    - _Zoom: 1
+    m_Colors:
+    - _ColourOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Params: {r: 0, g: 0, b: 0, a: 0}

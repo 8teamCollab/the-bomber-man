@@ -1,0 +1,420 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3915762182411946025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8548178678246805742}
+  - component: {fileID: 4540591083159155731}
+  - component: {fileID: 438861260693798771}
+  - component: {fileID: -3444909302072077292}
+  - component: {fileID: 7011129831169893017}
+  - component: {fileID: -6330336877791675013}
+  m_Layer: 0
+  m_Name: LevelSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8548178678246805742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4540591083159155731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48baee9f639592944bd0bef8109cdefe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  width: 15
+  height: 11
+  playerGameObject: {fileID: 2648964694054093007, guid: 2ddc05b53650b4448b67a040ebcc1a86,
+    type: 3}
+  exitGameObject: {fileID: 8811750532252300820, guid: 8ceaed11cd5882a42b4029a95702a49c,
+    type: 3}
+  boxCount:
+    min: 40
+    max: 50
+  wallTile: {fileID: 11400000, guid: 2275c784aff378f4784ceaa1c19760c3, type: 2}
+  boxTile: {fileID: 11400000, guid: 64bfaac83400dfa488638b2803ba68c2, type: 2}
+  floorDL: {fileID: 11400000, guid: 31cd3d6fded75484cb18a7bd0d515ffe, type: 2}
+  floorEmpty: {fileID: 11400000, guid: ec709cf548f179c4cb9bb3a396258fe2, type: 2}
+  floorRD: {fileID: 11400000, guid: 1614e75b6be664b48bc1153e3e0394f7, type: 2}
+  floorRDL: {fileID: 11400000, guid: 6e6c1c17de2a10946be47c2a8f17648f, type: 2}
+  floorRL: {fileID: 11400000, guid: 99889cf59d3429c4a8ddf08b0ee3d443, type: 2}
+  floorUD: {fileID: 11400000, guid: bb4d4a6f6f7aedf4ebbbd1721c87b43b, type: 2}
+  floorUDL: {fileID: 11400000, guid: e164a75d6a1e9f24abc7527e0ad412a5, type: 2}
+  floorUL: {fileID: 11400000, guid: 111ce12265094964486efa61e1121b51, type: 2}
+  floorUR: {fileID: 11400000, guid: 08e158d9017ddea42b6b49f9a5f1387d, type: 2}
+  floorURD: {fileID: 11400000, guid: 86a86f4690f2c4847bd4e8ec3c1addf1, type: 2}
+  floorURDL: {fileID: 11400000, guid: df5eb2c282074304c859849a71e620da, type: 2}
+  floorURL: {fileID: 11400000, guid: c2fa0582c4937c9458e7f061c3d08326, type: 2}
+--- !u!114 &438861260693798771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703ffc096e8a94348971c499cc9417d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeGameObject: {fileID: 108985280922546059, guid: 0aaa13e4040e41c488ce838ddcf88e24,
+    type: 3}
+  wallTile: {fileID: 11400000, guid: 2275c784aff378f4784ceaa1c19760c3, type: 2}
+  boxTile: {fileID: 11400000, guid: 64bfaac83400dfa488638b2803ba68c2, type: 2}
+--- !u!114 &-3444909302072077292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2403c93bc88f23f4cbac5a0a4caa19b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyGameObject: {fileID: 1072274704752789153, guid: 0c75167d12f4ce74293115aa17837090,
+    type: 3}
+  enemies:
+  - name: Ingi
+    animator: {fileID: 22100000, guid: 76bafc208fce91d4bb2d37411aeb6c53, type: 2}
+    colorChanging: 1
+    hitpoints: 2
+    hitDamage: 1
+    speed: 6
+    fieldOfViewRadiusX: 3
+    fieldOfViewRadiusY: 3
+  - name: Reactive
+    animator: {fileID: 22100000, guid: 135c111b3e874674fb02ce605cff9c02, type: 2}
+    colorChanging: 0
+    hitpoints: 1
+    hitDamage: 1
+    speed: 4.5
+    fieldOfViewRadiusX: 2
+    fieldOfViewRadiusY: 2
+--- !u!114 &7011129831169893017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adeccd09be18b34993c2b42f40e584e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnChance: 0.65
+  box: {fileID: 11400000, guid: 64bfaac83400dfa488638b2803ba68c2, type: 2}
+  powerupGameObject: {fileID: 927941777181570952, guid: 330baf08e8c86714c9ce74f9ffd0771d,
+    type: 3}
+  powerups:
+  - name: PlayerBombsCapacityDec
+    animator: {fileID: 9100000, guid: 7814624e04af7b642923691aa6b06129, type: 2}
+    duration: 0
+    type: 1
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerBombsCapacityDecStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerBombsCapacityInc
+    animator: {fileID: 9100000, guid: 2c7724832e206b840a3af54c85babbfb, type: 2}
+    duration: 0
+    type: 2
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerBombsCapacityIncStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerExplosionDamageDec
+    animator: {fileID: 9100000, guid: f6cdfcf3b2db9cc4dadb14d375652bdc, type: 2}
+    duration: 0
+    type: 1
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerExplosionDamageDecStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerExplosionDamageInc
+    animator: {fileID: 9100000, guid: c6d6ad4e01c45cd46b2483f7b2f9021e, type: 2}
+    duration: 0
+    type: 2
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerExplosionDamageIncStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerExplosionRangeDec
+    animator: {fileID: 9100000, guid: 16b32bb8bc453544fadd5413e4ce4b02, type: 2}
+    duration: 0
+    type: 1
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerExplosionRangeDecStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerExplosionRangeInc
+    animator: {fileID: 9100000, guid: c6f33bf8f575a844e837177124d9fc32, type: 2}
+    duration: 0
+    type: 2
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerExplosionRangeIncStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerHitpointsDec
+    animator: {fileID: 9100000, guid: 689895788eed3e34584edd6b777e79f9, type: 2}
+    duration: 0
+    type: 1
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerHitpointsDecStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerHitpointsInc
+    animator: {fileID: 9100000, guid: 2f5a4f74d2b85a14da179b7bcf6fd88e, type: 2}
+    duration: 0
+    type: 2
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerHitpointsIncStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerSpeedDec
+    animator: {fileID: 9100000, guid: d966b746b2265624fa89c62f438029aa, type: 2}
+    duration: 5
+    type: 1
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerSpeedDecStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerSpeedDecEndAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - name: PlayerSpeedInc
+    animator: {fileID: 9100000, guid: 6a5b25caf78bedf4cab0b6120a702a48, type: 2}
+    duration: 5
+    type: 2
+    startAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerSpeedIncStartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    endAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -6330336877791675013}
+          m_MethodName: PlayerSpeedIncEndAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+--- !u!114 &-6330336877791675013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3915762182411946025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af279ddd46be9fa4d980c9e825488d99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

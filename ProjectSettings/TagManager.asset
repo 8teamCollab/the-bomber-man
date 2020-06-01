@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - GameManager
+  - Bomb
+  - Enemy
+  - LevelSceneCanvas
+  - Powerup
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BlockingLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 1652834481
+    locked: 0
+  - name: Items
+    uniqueID: 1827777993
+    locked: 0
+  - name: Units
+    uniqueID: 2422269071
+    locked: 0
+  - name: Explosions
+    uniqueID: 2247791365
+    locked: 0
+  - name: Top
+    uniqueID: 4119979993
+    locked: 0

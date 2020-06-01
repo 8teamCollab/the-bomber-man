@@ -1,0 +1,137 @@
+﻿using System.Collections.Generic;
+using UnityEngine;
+
+
+public class AudioManager : SingletonBehaviour<AudioManager>
+{
+    #region Variables
+
+    [SerializeField] private List<SoundAudioClip> sounds;
+    [SerializeField] private List<SoundAudioClipList> similarSounds;
+
+    #endregion Variables
+
+
+    public void PlaySound(Sound sound)
+    {
+        if (CanPlaySound(sound))
+        {
+            GameObject soundGameObject = new GameObject($"Sound ({sound})");
+
+            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioSource.clip = GetAudioClip(sound, audioSource, out bool loop);
+            audioSource.Play();
+
+            if (!loop)
+            {
+                Destroy(soundGameObject, audioSource.clip.length);
+            }
+        }
+    }
+    public void PlaySound(Sound sound, Vector3 position)
+    {
+        if (CanPlaySound(sound))
+        {
+            GameObject soundGameObject = new GameObject($"Sound ({sound})");
+            soundGameObject.transform.position = position;
+
+            AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+            audioSource.clip = GetAudioClip(sound, audioSource, out _);
+            audioSource.Play();
+
+            Destroy(soundGameObject, audioSource.clip.length);
+        }
+    }
+    public void PlaySound(SoundList soundList, Vector3 position)
+    {
+        GameObject soundGameObject = new GameObject($"Sound ({soundList})");
+        soundGameObject.transform.position = position;
+
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = GetAudioClip(soundList, audioSource, out _);
+        audioSource.Play();
+
+        Destroy(soundGameObject, audioSource.clip.length);
+    }
+
+
+    private bool CanPlaySound(Sound sound) //https://www.youtube.com/watch?v=QL29aTa7J5Q
+    {
+        switch (sound)
+        {
+            default:
+                return true;
+        }
+    }
+
+
+    private AudioClip GetAudioClip(Sound sound, AudioSource audioSource, out bool loop)
+    {
+        foreach (SoundAudioClip soundAudioClip in sounds)
+        {
+            if (soundAudioClip.sound == sound)
+            {
+                audioSource.outputAudioMixerGroup = soundAudioClip.output;
+
+                audioSource.dopplerLevel = 0f;
+                audioSource.rolloffMode = AudioRolloffMode.Linear;
+
+                audioSource.loop = soundAudioClip.loop;
+                loop = soundAudioClip.loop;
+
+                audioSource.ignoreListenerPause = soundAudioClip.ignoreListenerPause;
+
+                float volumeRandomness = Random.Range(-soundAudioClip.volumeRandomness / 2f, soundAudioClip.volumeRandomness / 2f);
+                audioSource.volume = soundAudioClip.volume * (1f + volumeRandomness);
+
+                float pitchRandomness = Random.Range(-soundAudioClip.pitchRandomness / 2f, soundAudioClip.pitchRandomness / 2f);
+                audioSource.pitch = soundAudioClip.pitch * (1f + pitchRandomness);
+
+                audioSource.maxDistance = soundAudioClip.maxDistance;
+                audioSource.spatialBlend = soundAudioClip.spatialBlend;
+
+                return soundAudioClip.audioClip;
+            }
+        }
+
+        Debug.LogError($"Sound {sound} not found");
+        loop = false;
+        return null;
+    }
+    private AudioClip GetAudioClip(SoundList soundList, AudioSource audioSource, out bool loop)
+    {
+        foreach (SoundAudioClipList soundAudioClipList in similarSounds)
+        {
+            if (soundAudioClipList.soundList == soundList)
+            {
+                int randomIndex = Random.Range(0, soundAudioClipList.audioClips.Count);
+                AudioClip randomAudioClip = soundAudioClipList.audioClips[randomIndex];
+
+                audioSource.outputAudioMixerGroup = soundAudioClipList.output;
+
+                audioSource.dopplerLevel = 0f;
+                audioSource.rolloffMode = AudioRolloffMode.Linear;
+
+                audioSource.loop = soundAudioClipList.loop;
+                loop = soundAudioClipList.loop;
+
+                audioSource.ignoreListenerPause = soundAudioClipList.ignoreListenerPause;
+
+                float volumeRandomness = Random.Range(-soundAudioClipList.volumeRandomness / 2f, soundAudioClipList.volumeRandomness / 2f);
+                audioSource.volume = soundAudioClipList.volume * (1f + volumeRandomness);
+
+                float pitchRandomness = Random.Range(-soundAudioClipList.pitchRandomness / 2f, soundAudioClipList.pitchRandomness / 2f);
+                audioSource.pitch = soundAudioClipList.pitch * (1f + pitchRandomness);
+
+                audioSource.maxDistance = soundAudioClipList.maxDistance;
+                audioSource.spatialBlend = soundAudioClipList.spatialBlend;
+
+                return randomAudioClip;
+            }
+        }
+
+        Debug.LogError($"Sound list {soundList} not found");
+        loop = false;
+        return null;
+    }
+}

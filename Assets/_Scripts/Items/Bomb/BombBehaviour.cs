@@ -1,0 +1,87 @@
+﻿using UnityEngine;
+using UnityEngine.Tilemaps;
+using EZCameraShake;
+
+
+public class BombBehaviour : MonoBehaviour
+{
+    #region Variables
+
+    [SerializeField] private GameObject explosionGameObject;
+
+    [Header("Explosion shake parameters")]
+    [SerializeField] private float magnitude;
+    [SerializeField] private float roughness;
+    [SerializeField] private float fadeInTime = 0.1f;
+    [SerializeField] private float fadeOutTime = 0.5f;
+
+    [Header("Tile references")]
+    [SerializeField] private TileBase wallTile;
+    [SerializeField] private TileBase boxTile;
+
+    private Tilemap tilemapGameplay;
+    private PPCrt cameraPPCrtModule;
+
+    #endregion Variables
+
+
+    private void Start()
+    {
+        tilemapGameplay = GameObject.Find("/Grid/TilemapGameplay").GetComponent<Tilemap>();
+        cameraPPCrtModule = Camera.main.GetComponent<PPCrt>();
+    }
+
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("BlockingLayer");
+        }
+    }
+
+
+    public void Explode()
+    {
+        Vector3Int tileCellPosition = tilemapGameplay.WorldToCell(transform.position);
+        Vector3 tilePosition = tilemapGameplay.GetCellCenterWorld(tileCellPosition);
+
+        Instantiate(explosionGameObject, tilePosition, Quaternion.identity);
+        CreateExplosions(tileCellPosition, Vector3Int.right);
+        CreateExplosions(tileCellPosition, Vector3Int.left);
+        CreateExplosions(tileCellPosition, Vector3Int.up);
+        CreateExplosions(tileCellPosition, Vector3Int.down);
+
+        CameraShaker.Instance.ShakeOnce(magnitude, roughness, fadeInTime, fadeOutTime);
+        cameraPPCrtModule.DistortImage();
+        AudioManager.Instance.PlaySound(SoundList.Explosion, transform.position);
+
+        Destroy(gameObject);
+    }
+
+
+    private void CreateExplosions(Vector3Int tileCellPosition, Vector3Int direction)
+    {
+        int explosionRange = PlayerLogicBehaviour.Instance.ExplosionRange;
+        Vector3Int explosionCellPosition = tileCellPosition + direction;
+
+        for (int i = 1; i <= explosionRange; i++)
+        {
+            TileBase tile = tilemapGameplay.GetTile(explosionCellPosition);
+
+            if (tile == wallTile)
+            {
+                break;
+            }
+            else if (tile == boxTile)
+            {
+                tilemapGameplay.SetTile(explosionCellPosition, null);
+            }
+
+            Vector3 explosionPosition = tilemapGameplay.GetCellCenterWorld(explosionCellPosition);
+            Instantiate(explosionGameObject, explosionPosition, Quaternion.identity);
+
+            explosionCellPosition += direction;
+        }
+    }
+}
