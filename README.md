@@ -17,3 +17,5 @@ You can also just download any version of the game from the [releases page](http
 
 ## License
 [The Bomber Man](https://github.com/8teamCollab/the-bomber-man) specific code is distributed under [GNU General Public License v3.0](https://github.com/8teamCollab/the-bomber-man/blob/master/LICENSE).
+
+Copyright (c) 2020 8team
