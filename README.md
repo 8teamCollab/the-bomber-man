@@ -1,6 +1,19 @@
 # The Bomber Man
 ### The Bomber Man is a remake of the cult game called Bomberman made on the Unity3D engine
 
+<table>
+  <tr>
+    <td><img src="README_files/1.jpg" alt="demo1"></td>
+    <td><img src="README_files/2.jpg" alt="demo2"></td>
+    <td><img src="README_files/3.jpg" alt="demo3"></td>
+  </tr>
+  <tr>
+    <td><img src="README_files/4.jpg" alt="demo4"></td>
+    <td><img src="README_files/5.jpg" alt="demo5"></td>
+    <td><img src="README_files/6.jpg" alt="demo6"></td>
+  </tr>
+</table>
+
 ## Table of contents
 - [Usage and installation](#usage-and-installation)
   + [Building](#building)
