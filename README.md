@@ -1,17 +1,17 @@
 # The Bomber Man
 
-`The Bomber Man is a remake of the cult game called Bomberman made on the Unity3D engine`
+The Bomber Man is a remake of the cult game called Bomberman made on the Unity3D engine
 
 <table>
   <tr>
-    <td><img src="README_files/1.jpg" alt="demo1"></td>
-    <td><img src="README_files/2.jpg" alt="demo2"></td>
-    <td><img src="README_files/3.jpg" alt="demo3"></td>
+    <td><img src="docs/README/1.jpg" alt="demo1"></td>
+    <td><img src="docs/README/2.jpg" alt="demo2"></td>
+    <td><img src="docs/README/3.jpg" alt="demo3"></td>
   </tr>
   <tr>
-    <td><img src="README_files/4.jpg" alt="demo4"></td>
-    <td><img src="README_files/5.jpg" alt="demo5"></td>
-    <td><img src="README_files/6.jpg" alt="demo6"></td>
+    <td><img src="docs/README/4.jpg" alt="demo4"></td>
+    <td><img src="docs/README/5.jpg" alt="demo5"></td>
+    <td><img src="docs/README/6.jpg" alt="demo6"></td>
   </tr>
 </table>
 
@@ -37,4 +37,4 @@ You can also just download any version of the game from the [releases page](http
 
 [The Bomber Man](https://github.com/8teamCollab/the-bomber-man) specific code is distributed under [GNU General Public License v3.0](https://github.com/8teamCollab/the-bomber-man/blob/master/LICENSE).
 
-Copyright (c) 2020 8team
+Copyright (c) 2022 8team
