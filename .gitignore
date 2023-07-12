@@ -72,3 +72,7 @@ crashlytics-build.properties
 
 # .collabignore file
 .collabignore
+
+# Plastic SCM
+.plastic/
+ignore.conf
